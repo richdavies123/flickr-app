@@ -1,0 +1,14 @@
+
+<h1>{{ data.title }} from <a href="{{ data.link }}" target="_blank">Flickr</a></h1>
+
+<div class="row photo-row" ng-repeat="photo in photos" >
+	<div class="col-sm-4 col-md-3">
+		<img ng-src="{{ photo.media.m }}" class="img-responsive" />
+	</div>
+	<div class="col-sm-8 col-md-9">
+		<h2>{{ photo.title }}</h2>
+		<a href="https://www.flickr.com/photos/{{ photo.author_id }}">{{ photo.author }}</a>
+		<p>Published on: {{ photo.date_taken | date:"dd MMMM yyyy 'at' hh:mm" }} </p>
+		<a href="{{ photo.link }}" target="_blank">View on Flickr</a>
+	</div>
+</div>
