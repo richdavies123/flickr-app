@@ -1,10 +1,33 @@
+.buttons(@bordercolor, @textcolor, @hovertextcolor, @hoverbackgroundcolor){
+	background-color: transparent;
+	border:2px solid @bordercolor;
+	color: @textcolor;
+	border-radius: 5px;
+	.hoverTransition();
+
+	&:hover{
+		color:@hovertextcolor;
+		background-color:@hoverbackgroundcolor;
+		text-decoration: none;
+	}
+}
+
+.hoverTransition(){
+ 	-o-transition: all 0.4s ease;
+  	-ms-transition: all 0.4s ease;
+  	-moz-transition: all 0.4s ease;
+  	-webkit-transition: all 0.4s ease;
+  	transition: all 0.4s ease;
+}
+
+
 
 body{
 	font-family: 'Open Sans', sans-serif;
 }
 
 h1{
-	margin: 15px 0; 
+	margin: 15px 0;
 
     @media only screen and (min-width : 768px) {
     	margin: 20px 0; 
@@ -15,8 +38,17 @@ h1{
     }
 }
 
+.button{
+	background-color: #666;
+	color: #fff;
+	padding: 5px 10px;
+	.buttons(#333, #333, #fff, #333);  
+}
+
 .photo-row{
 	margin-bottom: 15px;
+	background-color: #eee;
+	border: solid 3px #666;
 
     @media only screen and (min-width : 768px) {
     	margin-bottom: 20px; 
@@ -27,6 +59,14 @@ h1{
     }
 
 	h2{
+		font-weight: 600;
+	}
+
+	img{
+		padding: 15px;
+	}
+
+	.author{
 		font-weight: 600;
 	}
 }
