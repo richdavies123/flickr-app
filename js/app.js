@@ -10,6 +10,10 @@ myApp.config([ '$routeProvider', function ($routeProvider) {
 		templateUrl: 'partials/list_photos.html',
 		controller: 'ListPhotosController'
 	}).
+	when('/photos/:photoId', {
+		templateUrl: 'partials/detail_photos.html',
+		controller: 'DetailPhotoController'
+	}).
 	otherwise({
 		redirectTo: '/'
 	});

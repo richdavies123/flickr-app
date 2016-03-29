@@ -7,8 +7,9 @@
 	</div>
 	<div class="col-sm-8 col-md-9">
 		<h2>{{ photo.title }}</h2>
-		<p> <a href="https://www.flickr.com/photos/{{ photo.author_id }}" class="author">{{ photo.author }}</a> &#8209;
+		<p class="photo-details"> <a href="https://www.flickr.com/photos/{{ photo.author_id }}" class="author">{{ photo.author }}</a> &#8209;
 		Published on: {{ photo.date_taken | date:"dd MMMM yyyy 'at' hh:mm" }}</p>
+		<a href="#/photos/{{ photos.indexOf(photo) }}/"  class="button">View more details</a>
 		<a href="{{ photo.link }}" target="_blank" class="button">View on Flickr</a>
 	</div>
 </div>

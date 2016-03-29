@@ -11,3 +11,15 @@ flickrControllers.controller('ListPhotosController', ['$scope', '$http', functio
 	}
   
 }]);
+
+flickrControllers.controller('DetailPhotoController', ['$scope','$http', '$sce', '$routeParams', '$filter', function DetailPhotoController($scope, $http, $sce, $routeParams, $filter){
+	$http.jsonp('https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json').success(function(data) {
+
+    });
+
+	jsonFlickrFeed = function(data){
+		$scope.data = data;
+		$scope.photos = data.items;
+		$scope.whichItem = $routeParams.photoId;
+	}
+}]);
