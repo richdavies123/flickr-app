@@ -1,7 +1,13 @@
+
+/***********************************************************************
+MIXINS
+***********************************************************************/
+
 .buttons(@bordercolor, @textcolor, @hovertextcolor, @hoverbackgroundcolor){
 	background-color: transparent;
 	border:2px solid @bordercolor;
 	color: @textcolor;
+	display: inline-block;
 	border-radius: 5px;
 	.hoverTransition();
 
@@ -20,57 +26,82 @@
   	transition: all 0.4s ease;
 }
 
-
-
 body{
 	font-family: 'Open Sans', sans-serif;
 }
 
+header{
+	margin-top: 15px;
+}
+
+@media only screen and (max-width : 767px) {
+	.container{
+		max-width: 480px;
+
+		.img-responsive{
+			width: 100%;
+		}
+	}
+}
+
+
+
+/***********************************************************************
+TYPE
+***********************************************************************/
+
 h1{
-	margin: 15px 0;
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size:20px;
 
     @media only screen and (min-width : 768px) {
-    	margin: 20px 0; 
+    	margin-bottom: 20px;
+    	font-size:24px;
     }
 
     @media only screen and (min-width : 992px) {
-    	margin: 30px 0; 
+    	margin-bottom: 30px;
+    	font-size:28px;
     }
+}
+
+h2{
+	font-size:18px;
+
+    @media only screen and (min-width : 768px) {
+    	font-size:20px;
+    }
+
+    @media only screen and (min-width : 992px) {
+    	font-size:22px;
+    }
+}
+
+p{
+	font-size:14px;
+
+    @media only screen and (min-width : 768px) {
+    	font-size:16px;
+    }
+
+    @media only screen and (min-width : 992px) {
+    	font-size:18px;
+    }
+}
+
+hr{
+	border-color: #cccccc;
 }
 
 .button{
 	background-color: #666;
 	color: #fff;
 	padding: 5px 10px;
-	.buttons(#333, #333, #fff, #333);  
+	margin-right: 8px;
+	margin-bottom: 8px;
+	.buttons(#333, #333, #fff, #333);
 }
 
-.photo-row{
-	margin-bottom: 15px;
-	background-color: #eee;
-	border: solid 3px #666;
-
-    @media only screen and (min-width : 768px) {
-    	margin-bottom: 20px; 
-    }
-
-    @media only screen and (min-width : 992px) {
-    	margin-bottom: 30px; 
-    }
-
-	h2{
-		font-weight: 600;
-	}
-
-	img{
-		padding: 15px;
-	}
-
-	.photo-details{
-		margin: 15px 0;
-	}
-
-	.author{
-		font-weight: 600;
-	}
+.search{
 }

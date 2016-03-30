@@ -4,9 +4,11 @@ flickrControllers.controller('ListPhotosController', ['$scope', '$http', functio
     $http.jsonp('https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json').success(function(data) {
 
     });
-
+	// Used this answer on stack overflow for guidance
+	// http://stackoverflow.com/questions/28373389/printing-flickr-api-response-to-console-angularjs
 	jsonFlickrFeed = function(data){
 		$scope.data = data;
+		// Get the items from the JSON files
 		$scope.photos = data.items;
 	}
 
@@ -16,12 +18,13 @@ flickrControllers.controller('DetailPhotoController', ['$scope','$http', '$sce',
 	$http.jsonp('https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json').success(function(data) {
 
     });
-
 	jsonFlickrFeed = function(data){
 		$scope.data = data;
 		$scope.photos = data.items;
+		// Get the ID from the URL and use this in the template details.html
+		// to lookup the index of that item in the JSON file
 		$scope.whichItem = $routeParams.photoId;
-
+		// Parse the HTML in the description
         $scope.toTrustedHTML = function( html ){
             return $sce.trustAsHtml( html );
         }

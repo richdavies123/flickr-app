@@ -1,7 +1,18 @@
 
-<h1>{{ data.title }} from <a href="{{ data.link }}" target="_blank">Flickr</a></h1>
+<header class="row">
+	<div class="col-sm-8">
+		<h1>{{ data.title }} from <a href="{{ data.link }}" target="_blank">Flickr</a></h1>
+	</div>
+	<div class="col-sm-4">
+		<div class="search">
+			<label>
+				Search by Tags: <input type="text" ng-model="query.tags" />
+			</label>
+		</div>
+	</div>
+</header>
 
-<div class="row photo-row" ng-repeat="photo in photos" >
+<div class="row " ng-repeat="photo in photos | filter: query" >
 	<div class="col-sm-4 col-md-3">
 		<img ng-src="{{ photo.media.m }}" class="img-responsive" />
 	</div>
@@ -11,5 +22,8 @@
 		Published on: {{ photo.date_taken | date:"dd MMMM yyyy 'at' hh:mm" }}</p>
 		<a href="#/photos/{{ photos.indexOf(photo) }}/"  class="button">View more details</a>
 		<a href="{{ photo.link }}" target="_blank" class="button">View on Flickr</a>
+	</div>
+	<div class="col-sm-12">
+		<hr/>
 	</div>
 </div>
