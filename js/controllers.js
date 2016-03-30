@@ -1,6 +1,6 @@
 var flickrControllers = angular.module('flickrControllers', []);
 
-flickrControllers.controller('ListPhotosController', ['$scope', '$http', function ListPhotosController($scope, $http){
+flickrControllers.controller('ListPhotosController', ['$scope', '$http', function ($scope, $http){
     $http.jsonp('https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json').success(function(data) {
 
     });
@@ -14,11 +14,12 @@ flickrControllers.controller('ListPhotosController', ['$scope', '$http', functio
 
 }]);
 
-flickrControllers.controller('DetailPhotoController', ['$scope','$http', '$sce', '$routeParams', '$filter', function DetailPhotoController($scope, $http, $sce, $routeParams, $filter){
+flickrControllers.controller('DetailPhotoController', ['$scope','$http', '$sce', '$routeParams', '$filter', function ($scope, $http, $sce, $routeParams, $filter){
 	$http.jsonp('https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json').success(function(data) {
-
     });
+
 	jsonFlickrFeed = function(data){
+
 		$scope.data = data;
 		$scope.photos = data.items;
 		// Get the ID from the URL and use this in the template details.html

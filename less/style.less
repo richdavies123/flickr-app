@@ -109,19 +109,23 @@ h2{
 
 h3{
 	font-size:16px;
-	font-weight: 600;
+	margin-bottom: 15px;
+	margin-top: 0;
 
     @media only screen and (min-width : 768px) {
     	font-size:18px;
+    	margin-bottom: 20px;
     }
 
     @media only screen and (min-width : 992px) {
     	font-size:20px;
+    	margin-bottom: 30px;
     }
 }
 
 p{
 	font-size:14px;
+	font-weight: 300;
 
     @media only screen and (min-width : 768px) {
     	font-size:16px;
@@ -152,5 +156,19 @@ COMPONENTS
 .button-container{
 	@media only screen and (min-width : 992px) {
 		float: right;
+	}
+}
+
+.photo-description{
+	p{
+		/* A quick fix to hide the first p tag in the description which contains the Author information */
+		&:first-child{
+			display:none;
+		}
+	}
+
+	img{
+		float: left;
+		padding: 0 30px 30px 0;
 	}
 }
