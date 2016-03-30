@@ -8,7 +8,7 @@ flickrControllers.controller('ListPhotosController', ['$scope', '$http', functio
 	// http://stackoverflow.com/questions/28373389/printing-flickr-api-response-to-console-angularjs
 	jsonFlickrFeed = function(data){
 		$scope.data = data;
-		// Get the items from the JSON files
+		// Get the items from the JSON file
 		$scope.photos = data.items;
 	}
 
