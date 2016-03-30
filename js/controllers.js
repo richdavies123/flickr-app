@@ -28,5 +28,17 @@ flickrControllers.controller('DetailPhotoController', ['$scope','$http', '$sce',
         $scope.toTrustedHTML = function( html ){
             return $sce.trustAsHtml( html );
         }
+
+        if($routeParams.photoId > 0){
+            $scope.prevItem = Number($routeParams.photoId)-1;
+        } else {
+           $scope.prevItem = $scope.photos.length-1;
+        }
+
+        if($routeParams.photoId < $scope.photos.length-1){
+        	$scope.nextItem = Number($routeParams.photoId)+1;
+        } else {
+        	$scope.nextItem = 0;
+        }
 	}
 }]);
